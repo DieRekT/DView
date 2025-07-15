@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Camera App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔒 Security Camera</h1>
+            <div class="status-indicator" id="statusIndicator">
+                <span class="status-dot"></span>
+                <span class="status-text">Connecting...</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <img id="videoFeed" src="/video_feed" alt="Live Camera Feed" />
+                    <div class="video-overlay">
+                        <div class="motion-indicator" id="motionIndicator">
+                            <span class="motion-dot"></span>
+                            <span>Motion Detected</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="recordBtn" class="btn btn-primary">
+                    <span class="btn-icon">📹</span>
+                    Record Now
+                </button>
+                <button id="viewRecordingsBtn" class="btn btn-secondary">
+                    <span class="btn-icon">📁</span>
+                    View Recordings
+                </button>
+            </div>
+
+            <div class="recordings-panel" id="recordingsPanel" style="display: none;">
+                <div class="panel-header">
+                    <h2>📹 Recordings</h2>
+                    <button id="closeRecordingsBtn" class="btn-close">×</button>
+                </div>
+                <div class="recordings-list" id="recordingsList">
+                    <!-- Recordings will be populated here -->
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Security Camera App. All rights reserved.</p>
+        </footer>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span id="modalClose" class="modal-close">&times;</span>
+                <video id="modalVideo" controls autoplay></video>
+            </div>
+        </div>
+
+        <script src="/static/script.js"></script>
+    </body>
+</html>
